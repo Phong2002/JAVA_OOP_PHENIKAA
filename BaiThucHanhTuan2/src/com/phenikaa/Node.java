@@ -1,27 +1,27 @@
 package com.phenikaa;
 
 public class Node {
-    private Long data;
+    private Integer data;
     private Node next;
 
     public Node() {
     }
 
-    public Node(Long data, Node next) {
+    public Node(Integer data, Node next) {
         this.data = data;
         this.next = next;
     }
 
-    public Node(Long data){
+    public Node(Integer data){
         this.data=data;
         this.next=null;
     }
 
-    public Long getData() {
+    public Integer getData() {
         return data;
     }
 
-    public void setData(Long data) {
+    public void setData(Integer data) {
         this.data = data;
     }
 
