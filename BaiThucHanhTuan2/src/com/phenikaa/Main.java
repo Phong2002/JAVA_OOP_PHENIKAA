@@ -54,5 +54,27 @@ public class Main {
             System.out.print(x+" ");
         }
 
+        StackStudent stackStudent = new StackStudent(8);
+
+        Student student1 = new Student(101,"Nguyen Van A",7.8d);
+        Student student2 = new Student(102,"Nguyen Van B",9.0d);
+        Student student3 = new Student(103,"Nguyen Van C",8.4d);
+        Student student4 = new Student(104,"Nguyen Van D",2.5d);
+        Student student5 = new Student(105,"Nguyen Van E",4.8d);
+        Student student6 = new Student(106,"Nguyen Van F",9.9d);
+
+        stackStudent.push(student1);
+        stackStudent.push(student2);
+        stackStudent.push(student3);
+        stackStudent.push(student4);
+        stackStudent.push(student5);
+        stackStudent.push(student6);
+
+        System.out.println("\n");
+        System.out.print(stackStudent.isFull()?"Ngan xep da day ! ":"Ngan xep chua day !");
+        System.out.print("\nPeek :\n "+ stackStudent.peek().toString());
+        System.out.print("\nPop  :\n"+stackStudent.pop().toString());
+        System.out.print("\nPeek :\n"+stackStudent.peek().toString());
+
     }
 }
