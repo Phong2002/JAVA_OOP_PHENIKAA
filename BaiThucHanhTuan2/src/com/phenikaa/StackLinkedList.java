@@ -1,6 +1,6 @@
 package com.phenikaa;
 
-public class StackLinkedList implements IStack{
+public class StackLinkedList implements IStack<Long>{
     private Node top;
     private int size;
     public StackLinkedList(int size) {
@@ -9,7 +9,7 @@ public class StackLinkedList implements IStack{
     }
 
     @Override
-    public void push(long j) {
+    public void push(Long j) {
         if(isFull()){
             System.out.println("Stack is full");
             return;
@@ -23,11 +23,11 @@ public class StackLinkedList implements IStack{
     }
 
     @Override
-    public long pop() {
+    public Long pop() {
         long data=0;
         if(isEmpty()){
             System.out.println("Stack is empty!");
-            return -1;
+            return -1L;
         }
         else{
             size++;
@@ -38,10 +38,10 @@ public class StackLinkedList implements IStack{
     }
 
     @Override
-    public long peek() {
+    public Long peek() {
         if(isEmpty()){
             System.out.println("Stack is empty!");
-            return -1;
+            return -1L;
         }
         else{
             return top.getData();

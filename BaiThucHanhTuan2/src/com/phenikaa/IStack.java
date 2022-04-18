@@ -1,9 +1,9 @@
 package com.phenikaa;
 
-public interface IStack {
-    public void push(long data) ;
-    public long pop() ;
-    public long peek() ;
+public interface IStack <T>{
+    public void push(T data) ;
+    public T pop() ;
+    public T peek() ;
     public boolean isEmpty() ;
     public boolean isFull() ;
 

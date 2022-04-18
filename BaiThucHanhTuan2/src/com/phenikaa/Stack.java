@@ -1,6 +1,6 @@
 package com.phenikaa;
 
-public class Stack implements IStack{
+public class Stack implements IStack<Long>{
     private int maxSize;
     private long[] stackArray;
     private int top;
@@ -10,17 +10,17 @@ public class Stack implements IStack{
         top = -1;
     }
     @Override
-    public void push(long data) {
+    public void push(Long data) {
         stackArray[++top] = data;
     }
 
     @Override
-    public long pop() {
+    public Long pop() {
         return stackArray[top--];
     }
 
     @Override
-    public long peek() {
+    public Long peek() {
         return stackArray[top];
     }
 

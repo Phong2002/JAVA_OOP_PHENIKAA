@@ -2,7 +2,7 @@ package com.phenikaa;
 
 import java.util.Arrays;
 
-public class StackStudent {
+public class StackStudent implements IStack<Student>{
     private int maxSize;
     private Student[] stackArray;
     private int top;

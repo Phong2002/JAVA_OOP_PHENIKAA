@@ -1,6 +1,6 @@
 package com.phenikaa;
 
-public class Student {
+public class Student{
     private int studentCode;
     private String name;
     private double GPA;
