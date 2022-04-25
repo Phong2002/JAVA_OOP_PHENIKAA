@@ -34,9 +34,7 @@ public class DigitalWatch implements Runnable {
                 SimpleDateFormat formatter = new SimpleDateFormat("hh:mm:ss");
 //                Date date = cal.getTime();
                 timeString = formatter.format(new Date());
-
                 printTime();
-
                 t.sleep(1000);  // interval given in milliseconds
             }
         } catch (Exception e) {
