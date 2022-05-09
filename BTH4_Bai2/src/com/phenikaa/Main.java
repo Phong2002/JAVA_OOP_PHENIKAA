@@ -56,20 +56,36 @@ public class Main {
     studentList.add(student6);
     studentList.add(student7);
 
-
+// read student list to file student.data
         try (
             FileOutputStream student = new FileOutputStream("./student.data");
-            FileOutputStream sortstudent = new FileOutputStream("./sortstudent.data");
             ObjectOutputStream dataStudent = new ObjectOutputStream(student);
-            ObjectOutputStream dataSortStudent = new ObjectOutputStream(sortstudent) ;
             )
-
         {
            for(Student st:studentList){
-                dataStudent.writeObject(dataStudent.toString());
+                dataStudent.writeObject(dataStudent);
            }
-           dataStudent.close();
-           dataSortStudent.close();
+           dataStudent.flush();
+        }
+
+        catch (Exception e)
+        {
+            System.out.println("IOException : " + e);
+        }
+
+
+// read data and sort from student.data , write to file sortstudent.data
+        try (
+                ObjectInputStream dataStudent = new ObjectInputStream(new FileInputStream(new File("./student.data")));
+                FileOutputStream sortstudent = new FileOutputStream("./sortstudent.data");
+                ObjectOutputStream dataSortStudent = new ObjectOutputStream(sortstudent) ;
+        )
+
+        {
+            Student studentx=  (Student) dataStudent.readObject();
+            System.out.println( studentx.toString());
+            dataStudent.close();
+            dataSortStudent.flush();
         }
 
         catch (Exception e)
